@@ -4,6 +4,8 @@ export const metadata = {
   title: "Reservations | Admin",
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminReservations() {
   const reservations = await getReservations();
 

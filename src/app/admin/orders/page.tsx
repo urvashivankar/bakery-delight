@@ -5,6 +5,8 @@ export const metadata = {
   title: "Orders | Admin",
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminOrders() {
   const orders = await getOrders();
 
