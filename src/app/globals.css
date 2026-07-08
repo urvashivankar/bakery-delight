@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-ref-bg-top: #FDF8F7;
+  --color-ref-bg-bottom: #E8C5C8;
+  --color-ref-accent: #DE9BA9;
+  --color-ref-dark: #2A1A18;
+  
+  --color-bakery-bg: #FDF8F7;
+  --color-bakery-section: transparent;
+  --color-bakery-card: #FFFFFF;
+  --color-bakery-pink: #DE9BA9;
+  --color-bakery-rose: #E8C5C8;
+  --color-bakery-cream: #FFF7F2;
+  --color-bakery-gold: #C8A96A;
+  --color-bakery-chocolate: #2A1A18;
+  --color-bakery-text: #2A1A18;
+
+  --font-heading: var(--font-script);
+  --font-subheading: var(--font-sans);
+  --font-sans: var(--font-sans);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(0.98 0.01 20); 
+  --foreground: oklch(0.2 0.02 30); 
+  --border: oklch(0.9 0.03 10); 
+  --radius: 1rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    cursor: none;
+  }
+  body {
+    @apply text-bakery-text font-sans selection:bg-bakery-pink/30 bg-gradient-to-b from-ref-bg-top to-ref-bg-bottom bg-no-repeat min-h-screen bg-fixed;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-normal;
+  }
+  
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}

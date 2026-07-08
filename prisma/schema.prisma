@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model MenuItem {
+  id        String   @id @default(uuid())
+  name      String
+  category  String
+  price     String
+  image     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Reservation {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  phone     String
+  date      String
+  time      String
+  guests    String
+  requests  String?
+  timestamp DateTime @default(now())
+}
+
+model ContactMessage {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model Order {
+  id            String   @id @default(uuid())
+  customerName  String
+  customerEmail String
+  customerPhone String
+  address       String?
+  totalAmount   Float
+  status        String   @default("PENDING")
+  items         String   // Storing JSON stringified items
+  createdAt     DateTime @default(now())
+}

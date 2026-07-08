@@ -1,0 +1,16 @@
+{
+  "messages": [],
+  "reservations": [
+    {
+      "id": "1783445934703",
+      "name": "URVASHI VANKAR",
+      "email": "urvashiparmar1603@gmail.com",
+      "phone": "9510972650",
+      "date": "2026-07-08",
+      "time": "12:00",
+      "guests": "1-2",
+      "requests": "BBQ",
+      "timestamp": "2026-07-07T17:38:54.703Z"
+    }
+  ]
+}

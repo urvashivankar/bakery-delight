@@ -1,0 +1,18 @@
+[
+  { "name": "New York Cheesecake", "category": "Cheesecakes", "price": "₹850", "image": "https://images.unsplash.com/photo-1524351199678-941a58a3df50?q=80&w=600&auto=format&fit=crop" },
+  { "name": "Blueberry Cheesecake", "category": "Cheesecakes", "price": "₹950", "image": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=600&auto=format&fit=crop" },
+  { "name": "Oreo Cheesecake", "category": "Cheesecakes", "price": "₹900", "image": "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=600&auto=format&fit=crop" },
+  { "name": "Chocolate Truffle Cake", "category": "Cakes", "price": "₹1200", "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop" },
+  { "name": "Red Velvet Cake", "category": "Cakes", "price": "₹1050", "image": "https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?q=80&w=600&auto=format&fit=crop" },
+  { "name": "Black Forest", "category": "Cakes", "price": "₹1000", "image": "https://images.unsplash.com/photo-1558326567-98ae2405596b?q=80&w=600&auto=format&fit=crop" },
+  { "name": "Tiramisu", "category": "Cakes", "price": "₹1400", "image": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?q=80&w=600&auto=format&fit=crop" },
+  { "name": "Chocolate Muffin", "category": "Pastries", "price": "₹150", "image": "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?q=80&w=600&auto=format&fit=crop" },
+  { "name": "Butter Croissant", "category": "Pastries", "price": "₹120", "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop" },
+  { "name": "Macaron Box", "category": "Macarons", "price": "₹650", "image": "https://images.unsplash.com/photo-1569864358642-9d1684040f43?q=80&w=600&auto=format&fit=crop" },
+  { "name": "Belgian Waffle", "category": "Waffles", "price": "₹450", "image": "https://images.pexels.com/photos/2205270/pexels-photo-2205270.jpeg?auto=compress&cs=tinysrgb&w=600" },
+  { "name": "Chocolate Waffle", "category": "Waffles", "price": "₹500", "image": "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=600" },
+  { "name": "Classic Pancakes", "category": "Pancakes", "price": "₹350", "image": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600" },
+  { "name": "Blueberry Pancakes", "category": "Pancakes", "price": "₹400", "image": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?q=80&w=600&auto=format&fit=crop" },
+  { "name": "Fudge Brownies", "category": "Others", "price": "₹350", "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=600&auto=format&fit=crop" },
+  { "name": "Strawberry Donut", "category": "Others", "price": "₹90", "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=600&auto=format&fit=crop" }
+]
