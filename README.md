@@ -2,7 +2,6 @@
 
 A premium, modern, and fully interactive web application for a luxury bakery and patisserie. Built with **Next.js**, **Prisma ORM**, **TailwindCSS**, and **Framer Motion**.
 
-![Patisserie Preview](https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop)
 
 ##  Features
 
