@@ -37,13 +37,10 @@ export function SignatureCollection() {
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   const handleAddToCart = (item: any) => {
-    const numericPrice = parseInt(item.price.replace(/\D/g, ""), 10);
     addItem({
-      id: item.name.toLowerCase().replace(/\s+/g, '-'),
       name: item.name,
       category: "Signature Cake",
       price: item.price,
-      numericPrice,
       image: item.image
     });
     setToastMessage(`Added ${item.name} to cart!`);

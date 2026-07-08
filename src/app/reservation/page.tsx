@@ -15,11 +15,11 @@ export default function ReservationPage() {
     const res = await submitReservation(formData);
     if (res.success) {
       setStatus("success");
-      setMessage(res.message);
+      setMessage("message" in res ? (res.message as string) : "Reservation confirmed!");
       (e.target as HTMLFormElement).reset();
     } else {
       setStatus("error");
-      setMessage(res.message);
+      setMessage("error" in res ? (res.error as string) : ("message" in res ? (res.message as string) : "An error occurred"));
     }
   };
 

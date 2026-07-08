@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { submitContactMessage } from "@/app/actions/forms";
+import { submitContactForm } from "@/app/actions/forms";
 
 export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -13,14 +13,14 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus("loading");
     const formData = new FormData(e.currentTarget);
-    const res = await submitContactMessage(formData);
+    const res = await submitContactForm(formData);
     if (res.success) {
       setStatus("success");
-      setMessage(res.message);
+      setMessage("message" in res ? (res.message as string) : "Message sent successfully!");
       (e.target as HTMLFormElement).reset();
     } else {
       setStatus("error");
-      setMessage(res.message);
+      setMessage("error" in res ? (res.error as string) : ("message" in res ? (res.message as string) : "An error occurred"));
     }
   };
 
