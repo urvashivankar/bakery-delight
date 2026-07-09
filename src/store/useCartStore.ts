@@ -41,8 +41,13 @@ export const useCartStore = create<CartStore>()(
             };
           }
           
-          // Parse numeric price, e.g., "₹850" -> 850
-          const numericPrice = parseFloat(product.price.replace(/[^\d.]/g, ''));
+          // Parse numeric price, safely handling both string ("₹850") and number (850) formats
+          let numericPrice = 0;
+          if (typeof product.price === 'string') {
+            numericPrice = parseFloat(product.price.replace(/[^\d.]/g, '')) || 0;
+          } else if (typeof product.price === 'number') {
+            numericPrice = product.price;
+          }
           
           return {
             items: [...state.items, { ...product, id, numericPrice, quantity: 1 }],

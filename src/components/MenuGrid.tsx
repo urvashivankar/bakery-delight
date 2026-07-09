@@ -58,7 +58,8 @@ export function MenuGrid() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-4"
+            className="flex md:flex-wrap justify-start md:justify-center gap-3 md:gap-4 w-full overflow-x-auto pb-4 scrollbar-hide snap-x"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {menuCategories.map((cat) => (
               <button
@@ -67,7 +68,7 @@ export function MenuGrid() {
                   setActiveCategory(cat);
                   setVisibleCount(10);
                 }}
-                className={`px-6 py-2 rounded-full font-sans text-sm font-semibold tracking-wide transition-all duration-300 hover-target ${
+                className={`whitespace-nowrap shrink-0 snap-center px-6 py-2 rounded-full font-sans text-sm font-semibold tracking-wide transition-all duration-300 hover-target ${
                   activeCategory === cat 
                     ? "bg-bakery-chocolate text-white shadow-md" 
                     : "bg-white text-bakery-chocolate border border-bakery-chocolate/10 hover:border-bakery-gold hover:text-bakery-gold"
@@ -81,20 +82,20 @@ export function MenuGrid() {
 
         {/* Product Grid */}
         <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8">
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             {displayedProducts.map((product) => (
               <motion.div
-                key={product.name}
+                key={product.id || product.name}
                 layout
                 initial={{ opacity: 0, y: 40, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
-                className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg shadow-bakery-pink/10 hover:shadow-2xl hover:shadow-[#DE9BA9]/30 hover:-translate-y-3 transition-all duration-500 border border-white/60"
+                className="group flex flex-col bg-white rounded-[2rem] overflow-hidden shadow-lg shadow-bakery-pink/10 hover:shadow-2xl hover:shadow-[#DE9BA9]/30 hover:-translate-y-3 transition-all duration-500 border border-white/60"
               >
                 {/* Image */}
-                <div className="relative w-full aspect-square overflow-hidden bg-bakery-bg">
+                <div className="relative w-full h-56 md:h-auto md:aspect-square overflow-hidden bg-bakery-bg shrink-0">
                   <img 
                     src={product.image} 
                     alt={product.name}
@@ -113,16 +114,16 @@ export function MenuGrid() {
                 </div>
 
                 {/* Details */}
-                <div className="flex flex-col flex-grow text-center px-2">
-                  <span className="font-sans text-xs uppercase tracking-widest text-bakery-gold mb-1">
+                <div className="flex flex-col flex-grow text-center p-5 md:p-6">
+                  <span className="font-sans text-[10px] md:text-xs uppercase tracking-widest text-bakery-gold mb-2">
                     {product.category}
                   </span>
-                  <h3 className="font-heading text-xl text-bakery-chocolate font-bold mb-2">
+                  <h3 className="font-heading text-xl md:text-2xl text-bakery-chocolate font-bold mb-4">
                     {product.name}
                   </h3>
                   
                   <div className="mt-auto pt-4 flex items-center justify-between border-t border-bakery-chocolate/10">
-                    <span className="font-subheading text-xl text-bakery-chocolate font-medium">
+                    <span className="font-subheading text-lg md:text-xl text-bakery-chocolate font-medium">
                       {product.price}
                     </span>
                     <button 
@@ -153,6 +154,7 @@ export function MenuGrid() {
         <AnimatePresence>
           {toastMessage && (
             <motion.div
+              key="toast"
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.9 }}

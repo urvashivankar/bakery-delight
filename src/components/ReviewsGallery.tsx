@@ -67,25 +67,25 @@ export function ReviewsGallery() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 + (i % 4) * 0.1 }}
-                className="min-w-[320px] md:min-w-[420px] bg-white p-8 rounded-[2rem] shadow-xl shadow-bakery-pink/10 border border-bakery-pink/5 snap-center flex flex-col justify-between"
+                className="min-w-[260px] md:min-w-[420px] bg-white p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] shadow-xl shadow-bakery-pink/10 border border-bakery-pink/5 snap-center flex flex-col justify-between"
               >
                 <div>
-                  <Quote className="text-bakery-gold/20 w-12 h-12 mb-4" />
-                  <p className="font-subheading text-xl text-bakery-chocolate italic mb-6 leading-relaxed">
+                  <Quote className="text-bakery-gold/20 w-8 h-8 md:w-12 md:h-12 mb-3 md:mb-4" />
+                  <p className="font-subheading text-lg md:text-xl text-bakery-chocolate italic mb-4 md:mb-6 leading-relaxed">
                     "{review.text}"
                   </p>
                 </div>
-                <div className="flex items-center gap-4 border-t border-bakery-chocolate/10 pt-4">
-                  <div className="w-12 h-12 rounded-full bg-bakery-section flex items-center justify-center font-heading text-xl text-bakery-chocolate font-bold">
+                <div className="flex items-center gap-3 md:gap-4 border-t border-bakery-chocolate/10 pt-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-bakery-section flex items-center justify-center font-heading text-lg md:text-xl text-bakery-chocolate font-bold">
                     {review.name.charAt(0)}
                   </div>
                   <div>
-                    <h4 className="font-sans font-bold text-bakery-chocolate">{review.name}</h4>
-                    <p className="font-sans text-xs text-bakery-chocolate/60">{review.role}</p>
+                    <h4 className="font-sans font-bold text-sm md:text-base text-bakery-chocolate">{review.name}</h4>
+                    <p className="font-sans text-[10px] md:text-xs text-bakery-chocolate/60">{review.role}</p>
                   </div>
-                  <div className="ml-auto flex gap-1 text-bakery-gold">
+                  <div className="ml-auto flex gap-0.5 md:gap-1 text-bakery-gold">
                     {[...Array(review.rating)].map((_, j) => (
-                      <Star key={j} size={14} fill="currentColor" />
+                      <Star key={j} size={12} className="md:w-3.5 md:h-3.5" fill="currentColor" />
                     ))}
                   </div>
                 </div>

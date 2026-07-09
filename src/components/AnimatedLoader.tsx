@@ -28,12 +28,12 @@ export function AnimatedLoader() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, ease: "linear", repeat: Infinity }}
-                className="absolute w-full h-full border border-white/40 rounded-full"
+                className="absolute top-0 left-0 w-full h-full border border-white/40 rounded-full"
               />
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 12, ease: "linear", repeat: Infinity }}
-                className="absolute w-[120%] h-[120%] border border-dashed border-white/60 rounded-full"
+                className="absolute top-[-10%] left-[-10%] w-[120%] h-[120%] border border-dashed border-white/60 rounded-full"
               />
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
